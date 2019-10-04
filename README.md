@@ -24,7 +24,7 @@ This lab will build on the skills that you've learned after your first couple we
 
  ## Rubric
 
-
+![textBasedAdventureRubric.png](./textBasedAdventureRubric.png)
 
 ## Hints:
 
