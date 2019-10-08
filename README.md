@@ -4,6 +4,9 @@
 
 1. Fork the assignment repo
 1. Clone your Fork to your machine
+1. Open your folder and enter `npm install` in the terminal. 
+1. Create a folder called `.gitignore`.
+1. Inside of .gitignore write `node_modules/`
 1. Complete the lab
 1. Push your changes to your Fork
 1. Submit a Pull Request back to the assignment repo
