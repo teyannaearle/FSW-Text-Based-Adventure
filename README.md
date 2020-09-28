@@ -21,16 +21,42 @@ This project will build on the skills that you've learned after your first coupl
 
  Look [here](https://classicreload.com/zork-i.html) and [here](http://www.bbc.co.uk/programmes/articles/1g84m0sXpnNCv84GpN2PLZG/the-hitchhikers-guide-to-the-galaxy-game-30th-anniversary-edition) for a couple examples of the genre.  Be creative with your app. Apps will be evaluated by the following criteria:   
 
-## Technical requirements:
+## User Stories
 
-* Your command line app must run with no errors or warnings
-* Have at least 10 opportunities for the user to make decisions
-* Have at least one opportunity where the user will enter a number
-* Use both Switch statements and If/Else Statements
-* Use a for loop in your code
-* Use a while loop in your code
 
-## Hints:
+### As a user, I want to be able to begin a game
+
+#### Acceptance criteria
+
+- Cloning your project, running `npm install` and `YOURPROJECTNAMEHERE.js` will start a game
+- No errors are logged to the console
+- The game displays initial instructions about how to play and a welcome message
+
+### As a user, I want to be able to make decisions during the game
+
+#### Acceptance criteria
+
+- Invalid entires are reprompted
+- There are at least 10 opportunities to make a deicision
+- The user must enter a string to make a decision
+- The user must enter a number to make a decision
+
+### As a user, I want to be able to restart a game
+
+#### Acceptance criteria
+
+- The user is prompted to restart the game and can enter yes or no
+- Entering no causes the program to terminate
+- Entering yes begins the game again, wiping the previous state
+
+## Code quality and styling
+
+### Git Commits
+
+### Variable names and readability
+
+
+## On Reading Input:
 
 - This project imports an npm module called `readline-sync` that allows the user to enter input to the terminal. The line at the top: `const readline = require('readline-sync')` gives you access to this functionality
 
