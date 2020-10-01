@@ -62,12 +62,10 @@ let yourVariableHere = readline.question("Enter your name: ")
 - Entering no causes the program to terminate
 - Entering yes begins the game again, wiping the previous state
 
-## Standards
+## Sample Trello Board
 
-- M1.1: Use basic git flow
-- M1.2: Create constants and variables of different types and use operators to solve problems
-- M1.3:	Define and call functions
-- M1.4:	Use control flow to create different code paths or to repeat code execution
+[Trello](https://trello.com/b/vbKtMOKj/text-based-adventure-project-plan)
+
 
 ## Rubric
 
