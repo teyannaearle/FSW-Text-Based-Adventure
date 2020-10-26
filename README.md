@@ -8,6 +8,8 @@ This project will build on the skills that you've learned after your first coupl
 
 Look [here](https://classicreload.com/zork-i.html) and [here](http://www.bbc.co.uk/programmes/articles/1g84m0sXpnNCv84GpN2PLZG/the-hitchhikers-guide-to-the-galaxy-game-30th-anniversary-edition) for a couple examples of the genre.  Be creative!
 
+A fun Google easter egg is to Google search `text adventure`. From the results page right click on the page and inspect the console. You should find a game by Google. 
+
 ### Reading input
 
 This project imports an npm module called `readline-sync` that allows the user to enter input to the terminal. The line at the top: `const readline = require('readline-sync')` gives you access to this functionality
