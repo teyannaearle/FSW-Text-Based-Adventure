@@ -64,7 +64,9 @@ let yourVariableHere = readline.question("Enter your name: ")
 - Entering no causes the program to terminate
 - Entering yes begins the game again, wiping the previous state
 
-## Sample Trello Board
+## Trello Board
+
+Replace the link below with the link to your Trello project:
 
 [Trello](https://trello.com/b/vbKtMOKj/text-based-adventure-project-plan)
 
