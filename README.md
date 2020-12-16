@@ -71,4 +71,5 @@ let yourVariableHere = readline.question("Enter your name: ")
 
 ## Rubric
 
-![textBasedAdventureRubric.png](./textBasedAdventureRubric.png)
+![outcomesRubric.png](./outcomesRubric.png)
+![acRubric.png](./acRubric.png)
