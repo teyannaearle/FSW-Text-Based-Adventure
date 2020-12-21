@@ -43,7 +43,7 @@ let yourVariableHere = readline.question("Enter your name: ")
 
 #### Acceptance criteria
 
-- Cloning your project, running `npm install` and `YOURPROJECTNAMEHERE.js` will start a game
+- Cloning your project, running `npm install` and `node YOURPROJECTNAMEHERE.js` will start a game
 - No errors are logged to the console
 - The game displays initial instructions about how to play and a welcome message
 
