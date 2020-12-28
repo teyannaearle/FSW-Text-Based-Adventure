@@ -103,9 +103,65 @@ const gameLoop = () => {
 
 
     function adventure2() {
-        console.log("")
+    
+        console.log("You put the phone back in your pocket. \n ")
+        adventure2Start()
+        
+      function adventure2Start(){ 
+        let direction = readline1.question("Do you want to stay in the room or explore the house?\n")
+        let direction2 = direction.toLowerCase()
+
+        if (direction2 === "stay" || direction2 === "stay in the room" || direction2 === "room"){ 
+            reDirection()
+
+        } else if (direction2 === "explore" || direction2 ===  "explore the house" || direction2 ===  "explore house" || direction2 === "house"){
+            reDirection()
+
+        } else {
+        console.log(breaK)
+        console.log(reprompt)
+        console.log("simply input 'stay' or 'explore' ")
+        adventure2Start()
+    }
+      }
+
+
     }
 
+
+    function reDirection(){
+        console.log("All of a sudden, the lights go out and it's pitch black. \n Luckily you can use your phone's flashlight.\n")
+        console.log("In order to open the phone, you have to enter a password. \n The password is simple enough. It's just a single number between 1 and 5.\n")
+
+          for (let passwordAttempts = 3 ; passwordAttempts > 0 ; passwordAttempts--){
+                        
+             let passwordGuess = readline1.question("What number do you want to input? \n")
+
+                if (passwordGuess !== phonePassword && passwordAttempts === 1){
+                                console.log(`${breaK} Phone reads: TOO MANY TRIES. PHONE IS LOCKED.`)
+                                console.log("Guess you're stuck in the dark. \n")
+                                break;
+                } else if (passwordGuess !== phonePassword ){
+                                console.log(`${breaK} Phone reads: TRY AGAIN`)                                            
+                                
+                } else if (passwordGuess === phonePassword){
+                                console.log(`${breaK} Good job, you opened the phone. \n`)
+                                console.log("As soon as you go to turn on the flashlight, your phone dies.\n That's just bad luck.")
+                                break; 
+                            }            
+                }
+        console.log("You hear a loud thump behind you, in the room\n")
+            if (readline1.keyIn("Do you want to run out of the room?\n")){
+                console.log("You run out of the room as fast as you can.\n You run down a long, dark hallway and down the stairs.\n ")
+                console.log("Once you make it downstairs, you hear your cousin Ethan and your friend Bethany, calling out for you.\n")
+                console.log("That must be who was calling you earlier.\n You jet out the door and right into your cousin.\n")
+                runInTO()
+                console.log(`Come on ${avatarName}, we're going to check out the abandoned house on Dooms road to see if it's really haunted.\n` )
+                getGoing()
+            } 
+
+
+    }
 
 
     function goOut(){ 
@@ -321,8 +377,8 @@ const gameLoop = () => {
             }
 
         }
-    }       
-
+         
+    }
 
 
 startGame()
