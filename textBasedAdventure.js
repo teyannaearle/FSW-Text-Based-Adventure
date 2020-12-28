@@ -39,7 +39,7 @@ const startGame = () => {
 
 
 const quitGame = () => {
-    console.log("\n I'm sure we'll meet again.\n")
+    console.log("\n I'm sure we'll meet again.\n Goodbye. \n")
     process.exit()
 }
 
@@ -47,13 +47,13 @@ const quitGame = () => {
 
 
 const gameLoop = () => {
-    let phonePassword = "4"
 
     console.log(" \n Everything around you begins spinning as you get sucked into your screen. \n You close your eyes and scream because well.. you're being sucked into a screen. \n I mean, what kind of Jumanji type of stuff is that. Am I right? \n")
     console.log("Anywho...Everything feels cold as you begin to open your eyes. \n You see that you are sitting up, under the covers, in a bed, in a dimly lit bedroom. \n You look down at your hands and realize that your hands are not your hands.\n")
     console.log("Startled, you run over to a standing mirror that you see in the corner of the room and see that you are in a teenage body. \n Suddenly, a deep voice asks you 'WHAT NAME DO YOU CHOOSE?' \n You begin to look around to see where the voice is coming from. \n ")
     console.log("\n (It's me by the way. I'm the voice.) \n You see noone else in the room and begin to figure it out.")
     
+    let phonePassword = "4"
     let avatarName = readline1.question("Realizing that it's fate that is talking to you, and that it's time to choose your avatar's name, you respond My name is: \n")
 
     console.log("\n Your phone rings. \n You take it out of your pocket and you see a random number is calling. \n")
@@ -63,6 +63,50 @@ const gameLoop = () => {
     }else {
         adventure2()
     }
+
+
+
+    function adventure1(){
+        console.log("You hesitantly answer and say 'Hello?' \n  You hear what appears to be a teenage boy's voice saying 'What's up loser? You tryna go on a little adventure tonight?'")
+        
+        let response1 = ["Who the heck is this?!" , "Sure, if it's fun." , "Absolutely not! I'm staying home, so that I can stay alive!" ]
+        let index = readline1.keyInSelect(response1, "How would you like to respond? \n")
+
+
+
+        if (response1[index] === response1[0]){
+            console.log(`The person on the other line responds '${avatarName}, what do you mean who is this?'`)
+            console.log("'This is your cousin Ethan, you moron.' \n 'Bethany and I were thinking of jumping the fence over at that old abandoned house on Dooms road and seeing if it's really haunted.' \n")
+            goOut()
+            
+        } else if(response1[index] === response1[1]){
+            console.log("Wait, I just realized I'm calling from my new number. \n It's your cousin, Ethan. \n Did you even know it was me wierdo?\n")
+            console.log("Anyways, Bethany and I were thinking of jumping the fence over at that old abandoned house on Dooms road and seeing if it's really haunted.\n")
+            goOut()
+
+        } else if(response1[index] === response1[2]){
+            console.log("The person on the other end responds 'Uhhh, okay. Bye then.' \n")
+            console.log("You hang up the phone.")
+            adventure2()
+
+
+        } else if(response1[index] === response1[3]){
+            quitGame()
+
+        }
+
+    }
+
+
+
+
+
+
+    function adventure2() {
+        console.log("")
+    }
+
+
 
     function goOut(){ 
         if (readline1.keyInYN("'Wanna come with?' \n")){
@@ -82,10 +126,8 @@ const gameLoop = () => {
                         if(playOnPhone){
                             console.log("\nYou pull the phone back out of your pocket.")
                             console.log("In order to open the phone, you have to enter a password. \n The password is simple enough. It's just a single number between 1 and 5.\n")
-                            
-                            
 
-                            for (let passwordAttempts = 3 ; passwordAttempts > 0 ; passwordAttempts--){
+                                for (let passwordAttempts = 3 ; passwordAttempts > 0 ; passwordAttempts--){
                             
                                 let passwordGuess = readline1.question("What number do you want to input? \n")
 
@@ -107,6 +149,10 @@ const gameLoop = () => {
                                     break;
                                 }
                             }
+                        } else {
+                            console.log(` ${breaK} As you're just sitting there, you doze off. \n A little while later you hear your cousin yell your name.`)
+                            hallwayScene()
+                            getGoing()
                         }
                 } else if (response2L === "look around" || response2L === "look around the house" || response2L === "take a look around" || response2L === "take a look around the house"){
                     console.log("\nYou walk to the door. \n You go to open the knob but you hear a noise behind you." )
@@ -143,6 +189,8 @@ const gameLoop = () => {
 
         } }
 
+
+
     function hallwayScene(){ 
         console.log("You get up and walk to the bedroom door. \n You turn the knob and open the door. \n")
         console.log("You see a long and dark hallway. \n You look around for a light switch but don't see one anywhere.\n")
@@ -151,50 +199,128 @@ const gameLoop = () => {
         runInTO()
     }
      
+
+
     function runInTO(){    
         console.log("Ethan says 'Woah watch out, what is up with you today dude?' \n Before you can even speak, Bethany cuts you off saying 'Can we go already?'\n")}
 
-    function getGoing(){}
+    function avatarDone(){    
+        console.log("You are transported back into your own physical body. \n")
+        console.log("Told you that you wouldn't make it (ツ)_/¯ \n Fate will ALWAYS reign supreme!")
+            if (readline1.keyInYN("Have the courage to give it another go?")){
+                gameLoop()
+            } else {
+                console.log("Of course not, puny human.\n")
+                quitGame()
+            }
+        }
 
+    function getGoing(){
+        console.log("The three of you start heading to this supposed haunted house. \n Bethany drops her phone but doesn't seem to notice\n" )
+        let pickUpPhone = readline1.question("Do you want to pick it up? \n ")
+        let pickUpPhone2 = pickUpPhone.toLowerCase()
 
-    function adventure1(){
-        console.log("You hesitantly answer and say 'Hello?' \n  You hear what appears to be a teenage boy's voice saying 'What's up loser? You tryna go on a little adventure tonight?'")
-        
-        let response1 = ["Who the heck is this?!" , "Sure, if it's fun." , "Absolutely not! I'm staying home, so that I can stay alive!" ]
-        let index = readline1.keyInSelect(response1, "How would you like to respond? \n")
+            if(pickUpPhone2 === "yes" || pickUpPhone2 === "pick it up"){
+                console.log("As you bend down to pick it up, a car speeds onto the sidewalk and right into you.. killing your avatar.\n")
+                avatarDone()
 
-        // console.log(`You respond '${response1[index]}' \n`)
+            } else if (pickUpPhone2 === "no"){
+                console.log(`${breaK} You walk past it. \n Bethany realizes she doesn't have her phone.\n`)
+                console.log("She turns around and starts to look for it. \n Ethan doesn't seem to care. He keeps walking. \n")
+                console.log("You decide you'll give it a couple seconds before telling Bethany where her phone is, as to not look suspicious. \n")
 
-        if (response1[index] === response1[0]){
-            console.log(`The person on the other line responds '${avatarName}, what do you mean who is this?'`)
-            console.log("'This is your cousin Ethan, you moron.' \n 'Bethany and I were thinking of jumping the fence over at that old abandoned house on Dooms road and seeing if it's really haunted.' \n")
-          goOut()
-            
-        } else if(response1[index] === response1[1]){
-            console.log("Wait, I just realized I'm calling from my new number. \n It's your cousin, Ethan. \n Did you even know it was me wierdo?\n")
-            console.log("Anyways, Bethany and I were thinking of jumping the fence over at that old abandoned house on Dooms road and seeing if it's really haunted.\n")
-            goOut()
+                let seconds = ["1-5" , "6-10"]
+                let index = readline1.keyInSelect(seconds, "How many seconds do you want to wait? \n")
 
-        } else if(response1[index] === response1[2]){
-            console.log("The person on the other end responds 'Uhhh, okay. Bye then.' \n")
-            console.log("You hang up the phone.")
-            adventure2()
+                    if (seconds[index] === seconds[0]){
+                        console.log("You wait about 4 seconds and then bend down to pick up the phone.\n")
+                        console.log("As you grab the phone, a car speeds onto the sidewalk and right into you, killing your avatar.")
+                        avatarDone()
 
+                    } else if (seconds[index] === seconds[1]){
+                        console.log("You slowly count to 7 and as you are about to walk over to the phone, Bethany pushes you out of the way and you both tumble to the ground.")
+                        console.log("A car crashes onto the sidewalk.. just a few feet away from the two of you. \n Bethany saved your life! \n")
+                        console.log("You're in shock. Bethany exclaims 'I swear this town is just full of bad luck.' \n  You slowly stand up and help Bethany up as well. \n")
+                        console.log("You both realize that Ethan went ahead without the two of you.")
+                        
+                        bethQuestion()
+                        function bethQuestion(){
+                            let continueOn = readline1.question("Bethany asks if you still want to go to the haunted house or to just go home. \n")
+                            let continueOn2 = continueOn.toLowerCase()
 
-        } else if(response1[index] === response1[3]){
-            quitGame()
+                            if(continueOn2 === "go to the haunted house" || continueOn2 === "haunted house"){
+                                goToHauntedHouse()
+                            } else if (continueOn2 === "home" || continueOn2 === "go home" || continueOn2 === "just go home"){
+                                adventure2b()
+                            } else{
+                                console.log(breaK)
+                                console.log(reprompt)
+                                console.log("Simply respond 'home' or 'haunted house' \n")
+                                 bethQuestion()
+                            }
+                        }
+
+                    } else {
+                        quitGame
+                    }
+            }
+    }
+
+        function goToHauntedHouse(){
+            console.log("You and Beth walk a couple blocks up until you make it to Dooms road.\n As soon as you hit Dooms road you see the abandoned house.\n")
+            console.log("No one has lived there in years.\n The windows are all shattered and the huge house looks dreary.\n You get a shiver down your spine. \n")
+            console.log("Ethan yells from inside the house 'Are you two scary cats gonna come in or not?' \n")
+
+            if (readline1.keyInYN("Do you want to go in")){
+                console.log("You and Beth reluctantly head inside.")
+                console.log("As soon as you walk through the door, you lose sight of Bethany. \n You call out for her and for Ethan.\n You hear nothing in return.\n")
+               
+                oldLady()
+
+                function oldLady(){
+                let oldQues = readline1.question("Suddenly, you see what appears to be an old lady. Your confused. \n She says 'I can't find my son. Can you help me?")
+                let oldQues2 = oldQues.toLowerCase() 
+                    if(oldQues2 === "okay" || oldQues2 === "sure" || oldQues2 === "yes"){
+                        console.log("She laughs maniacally and rushes towards you. \n You realize that she is a ghost! \n She's so fast that before you can even think about your next move, she possesses you.")
+                        console.log("Your avatar body can not survive without a living soul.\n")
+                        avatarDone()
+                    } else if (oldQues2 === "nope" || oldQues2 === "no way" || oldQues2 === "no"){
+                        console.log("She looks sad and disappears into thin air. \n Spooky. \n As you begin to walk away, you fall through a hole in the floor. ")
+                        console.log("Sorry to break it to ya but you don't make it. \n")
+                        avatarDone()
+                    } else{
+                        console.log(breaK)
+                        console.log(reprompt)
+                        console.log("simply input 'yes' or 'no' " )
+                        oldLady()
+                    }
+                }
+
+            } else {
+                console.log("You yell out to Ethan 'Sorry man, I'm just too scared' \n You turn to look at Beth and wish her good luck. \n")
+                adventure2b()
+                
+            }
+
 
         }
 
-    }
 
+        function adventure2b(){
+            console.log("You head in the direction of your house. \n As your walking away you scream out to Beth 'Thanks for saving my life!' \n")
+            console.log("You make it back to your house, safe and sound.") 
+            console.log("And lucky for you.. this is the end of the game. \n You are transported back into your own physical body. \n I don't know how you did it.\n")
+            console.log("Lady luck must've been on your side.\n Hmph. That's an unfair advantage! \n I'll have to take that up with her later.\n")
+            console.log("Well.. I guess humans are.. UGH this is gonna be hard to get out.. \n They're not \n *cough \n as weak \n *cough *cough \n as I thought.")
+            console.log("But I bet you can't beat me again!!")
 
+            if (readline1.keyInYN("Want to try again?")){
+                gameLoop()
+            } else{
+                quitGame()
+            }
 
-
-
-
-    function adventure2() {}
-
+        }
     }       
 
 
