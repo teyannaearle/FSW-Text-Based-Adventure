@@ -14,7 +14,7 @@ const startGame = () => {
     
     console.log(`${breaK} Right, right, I knew that. As I was saying.. \n I'M HERE TO TELL YOU, PUNY LITTLE ${nameInput2} ,THAT I IN FACT CONTROL YOUR DESTINY! \n`)
     console.log("If you don't believe me... let's play a little game.\n" , "I'll transmit you into an avatar that is in a small town called Hellington.\n") 
-    console.log("Your goal will be to make it out of Hellington alive.\n")
+    console.log("Your goal will be to make it out of this game alive.\n")
     console.log("If you do, then you will humble me by proving that mankind is in fact more powerful than I thought!\n")
     console.log(`But if your avatar dies, which it will, THEN I WIN! \n And you, ${nameInput}, will be under my control FOR ALL OF ETERNITY! \n`)
     console.log("... or at least until you exit out of this game.\n")
@@ -49,7 +49,7 @@ const quitGame = () => {
 const gameLoop = () => {
 
     console.log(`Everything around you begins spinning as you get sucked into your screen. \n You close your eyes and scream because well.. you're being sucked into a screen. \n I mean, what kind of Jumanji type of stuff is that. Am I right? \n`)
-    console.log("Anywho...Everything feels cold as you begin to open your eyes. \n You see that you are sitting up, under the covers, in a bed, in a dimly lit bedroom. \n You look down at your hands and realize that your hands are not your hands.\n")
+    console.log("Anywho...Everything feels cold as you begin to open your eyes. \n You see that you are sitting up, under the covers, in a bed, in a dimly lit bedroom. \n You look down at your hands and realize that your hands are not YOUR hands.\n")
     console.log("Startled, you run over to a standing mirror that you see in the corner of the room and see that you are in a teenage body. \n Suddenly, a deep voice asks you 'WHAT NAME DO YOU CHOOSE?' \n You begin to look around to see where the voice is coming from. \n ")
     console.log("\n (It's me by the way. I'm the voice.) \n You see noone else in the room and begin to figure it out.")
     
@@ -58,7 +58,7 @@ const gameLoop = () => {
 
     console.log(`${breaK} Your phone rings. \n You take it out of your pocket and you see a random number is calling. \n`)
 
-    if (readline1.keyInYN("Do you want to pick it up? \n")){
+    if (readline1.keyInYN("Do you want to pick up the phone? \n")){
         adventure1()
     }else {
         adventure2()
@@ -75,17 +75,17 @@ const gameLoop = () => {
 
 
         if (response1[index] === response1[0]){
-            console.log(`The person on the other line responds '${avatarName}, what do you mean who is this?'`)
+            console.log(`${breaK}The person on the other line responds '${avatarName}, what do you mean who is this?'`)
             console.log("'This is your cousin Ethan, you moron.' \n 'Bethany and I were thinking of jumping the fence over at that old abandoned house on Dooms road and seeing if it's really haunted.' \n")
             goOut()
             
         } else if(response1[index] === response1[1]){
-            console.log("Wait, I just realized I'm calling from my new number. \n It's your cousin, Ethan. \n Did you even know it was me wierdo?\n")
+            console.log(`${breaK} Wait, I just realized I'm calling from my new number. \n It's your cousin, Ethan. \n Did you even know it was me wierdo?\n`)
             console.log("Anyways, Bethany and I were thinking of jumping the fence over at that old abandoned house on Dooms road and seeing if it's really haunted.\n")
             goOut()
 
         } else if(response1[index] === response1[2]){
-            console.log("The person on the other end responds 'Uhhh, okay. Bye then.' \n")
+            console.log(`${breaK}The person on the other end responds 'Uhhh, okay. Bye then.' \n`)
             console.log("You hang up the phone.")
             adventure2()
 
@@ -226,7 +226,7 @@ const gameLoop = () => {
 
                     let turnLightOn = readline1.keyInYN("Do you want to turn on the light")
                         if (turnLightOn){
-                            console.log(`${breaK} Wow. There are dozens of porcelain dolls in the living room. \n Their beady eyes glaring at you \n Their menacing smiles almost taunting you.`)
+                            console.log(`${breaK} Wow. There are dozens of porcelain dolls in the living room. \n Their beady eyes glaring at you. \n Their menacing smiles almost taunting you.`)
                             console.log("Just in time, you hear your cousin yelling your name. \n You turn around and jet straight out the front door and right into Ethan. \n")
                             runInTO()
                             getGoing()
@@ -286,14 +286,14 @@ const gameLoop = () => {
         let pickUpPhone = readline1.question("Do you want to pick it up? \n ")
         let pickUpPhone2 = pickUpPhone.toLowerCase()
 
-            if(pickUpPhone2 === "yes" || pickUpPhone2 === "pick it up"){
+            if(pickUpPhone2 === "yes" || pickUpPhone2 === "pick it up" || pickUpPhone2 === "y"){
                 console.log(`${breaK} As you bend down to pick it up, a car speeds onto the sidewalk and right into you.. killing your avatar.\n`)
                 avatarDone()
 
             } else if (pickUpPhone2 === "no" || pickUpPhone2 ==="n"){
                 console.log(`${breaK} You walk past it. \n Bethany realizes she doesn't have her phone.\n`)
-                console.log("She turns around and starts to look for it. \n Ethan doesn't seem to care. He keeps walking. \n")
-                console.log("You decide you'll give it a couple seconds before telling Bethany where her phone is, as to not look suspicious. \n")
+                console.log("She turns around and starts to look for it. \n Ethan doesn't seem to care. He keeps on walking. \n")
+                console.log("You decide you'll give it a couple of seconds before telling Bethany where her phone is, as to not look suspicious. \n")
 
                 let seconds = ["1-5" , "6-10"]
                 let index = readline1.keyInSelect(seconds, "How many seconds do you want to wait? \n")
@@ -352,11 +352,11 @@ const gameLoop = () => {
                 function oldLady(){
                 let oldQues = readline1.question("Suddenly, you see what appears to be an old lady. Your confused. \n She says 'I can't find my son. Can you help me?")
                 let oldQues2 = oldQues.toLowerCase() 
-                    if(oldQues2 === "okay" || oldQues2 === "sure" || oldQues2 === "yes"){
+                    if(oldQues2 === "okay" || oldQues2 === "sure" || oldQues2 === "yes" || oldQues2 === "y"){
                         console.log("She laughs maniacally and rushes towards you. \n You realize that she is a ghost! \n She's so fast that before you can even think about your next move, she possesses you.")
                         console.log("Your avatar body can not survive without a living soul.\n")
                         avatarDone()
-                    } else if (oldQues2 === "nope" || oldQues2 === "no way" || oldQues2 === "no"){
+                    } else if (oldQues2 === "nope" || oldQues2 === "no way" || oldQues2 === "no" || oldQues2 === "n"){
                         console.log("She looks sad and disappears into thin air. \n Spooky. \n As you begin to walk away, you fall through a hole in the floor. ")
                         console.log("Sorry to break it to ya but you don't make it. \n")
                         avatarDone()
