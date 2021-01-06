@@ -1,12 +1,19 @@
 const readline1 = require('readline-sync')
 
+const reprompt = "You're doing it wrong, you puny little human!"
+const breaK = "\n -------------------------- \n"
 
 const startGame = () => {
     console.log("Well well well, Hello there. \n", "I'm fate. I control ALL. \n")
     console.log("You simple humans always seem to think that you control your own lives. \n")
     console.log("Well, I'm here to prove to you that, YOU SILLY HUMANS ARE WRONG. \n I'M HERE TO TELL YOU ... \n")
 
-    let nameInput = readline1.question(`*ahem , what is your name anyways ? \n`)
+    nameStart()
+
+  function nameStart(){   
+    let nameInput = readline1.question(`*ahem , what is your name anyways ? \n`) 
+   
+    if (nameInput){
     let nameInput2 = nameInput.toUpperCase()
     let firstNameLetter = nameInput[0].toUpperCase()
     let firstNameEnding = nameInput.slice(1).toLowerCase()
@@ -31,8 +38,14 @@ const startGame = () => {
         console.log(`\n Just like a human to be scared. \n It's probably for the best anyway. So long ${nameInput}.`)
         quitGame()
 
-    }
-
+    } 
+} else {
+    console.log(breaK)
+    console.log(reprompt)
+    console.log("You must think you're so funny, entering that when your name is ... \n")
+    nameStart()
+}
+  }
 
 }
 
@@ -47,19 +60,22 @@ const quitGame = () => {
 }
 
 
-const reprompt = "You're doing it wrong, you puny little human!"
-const breaK = "\n -------------------------- \n"
+
 
 const gameLoop = () => {
+    let phonePassword = "4"
 
     console.log(`${breaK} Everything around you begins spinning as you get sucked into your screen. \n You close your eyes and scream because well.. you're being sucked into a screen. \n I mean, what kind of Jumanji type of stuff is that. Am I right? \n`)
     console.log("Anywho...Everything feels cold as you begin to open your eyes. \n You see that you are sitting up, under the covers, in a bed, in a dimly lit bedroom. \n You look down at your hands and realize that your hands are not YOUR hands.\n")
     console.log("Startled, you run over to a standing mirror that you see in the corner of the room and see that you are in a teenage body. It kind of looks like you. \n Suddenly, a deep voice asks you 'WHAT NAME DO YOU CHOOSE?' \n You begin to look around to see where the voice is coming from. \n ")
     console.log("\n (It's me by the way. I'm the voice.) \n You see no one else in the room and begin to figure it out.")
-
-    let phonePassword = "4"
-    let avatarName = readline1.question(`Realizing that it's fate that is talking to you, and that it's time to choose your avatar's name, you respond My name is: \n `)
+    avatarStart()
     
+    
+function avatarStart(){
+    let avatarName = readline1.question(`Realizing that it's fate that is talking to you, and that it's time to choose your avatar's name, you respond My name is: \n `)
+   
+   if (avatarName){ 
     let firstLetterAvatar = avatarName[0].toUpperCase()
     let endAvatarName = avatarName.slice(1).toLowerCase()
     avatarName = firstLetterAvatar + endAvatarName
@@ -405,8 +421,16 @@ const gameLoop = () => {
         }
 
     }
+    
 
+} else {
+    console.log(breaK)
+    console.log(reprompt)
+    console.log("Simply enter what you want the name of your Avatar to be!\n")
+    avatarStart()
 }
+}
+} 
 
 
 
